@@ -30,17 +30,17 @@
 #include <stdbool.h>
 #include "filter.h"
 
-#define PID_ROLL_RATE_KP  250.0
-#define PID_ROLL_RATE_KI  500.0
+#define PID_ROLL_RATE_KP  100.0
+#define PID_ROLL_RATE_KI  200.0
 #define PID_ROLL_RATE_KD  2.5
 #define PID_ROLL_RATE_INTEGRATION_LIMIT    33.3
 
-#define PID_PITCH_RATE_KP  250.0
-#define PID_PITCH_RATE_KI  500.0
+#define PID_PITCH_RATE_KP  100.0
+#define PID_PITCH_RATE_KI  200.0
 #define PID_PITCH_RATE_KD  2.5
 #define PID_PITCH_RATE_INTEGRATION_LIMIT   33.3
 
-#define PID_YAW_RATE_KP  120.0
+#define PID_YAW_RATE_KP  60.0
 #define PID_YAW_RATE_KI  16.7
 #define PID_YAW_RATE_KD  0.0
 #define PID_YAW_RATE_INTEGRATION_LIMIT     166.7
