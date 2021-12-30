@@ -64,13 +64,13 @@ struct this_s {
 };
 
 // Maximum roll/pitch angle permited
-static float rLimit  = 20;
-static float pLimit  = 20;
+static float rLimit  = 5;
+static float pLimit  = 5;
 static float rpLimitOverhead = 1.10f;
 // Velocity maximums
-static float xVelMax = 1.0f;
-static float yVelMax = 1.0f;
-static float zVelMax  = 1.0f;
+static float xVelMax = 0.3f;
+static float yVelMax = 0.3f;
+static float zVelMax  = 0.25f;
 static float velMaxOverhead = 1.10f;
 static const float thrustScale = 1000.0f;
 
@@ -96,7 +96,7 @@ float velZFiltCutoff = 20.0f;
 static struct this_s this = {
   .pidVX = {
     .init = {
-      .kp = 25.0f,
+      .kp = 20.0f,
       .ki = 1.0f,
       .kd = 0.0f,
     },
@@ -105,7 +105,7 @@ static struct this_s this = {
 
   .pidVY = {
     .init = {
-      .kp = 25.0f,
+      .kp = 20.0f,
       .ki = 1.0f,
       .kd = 0.0f,
     },
@@ -123,7 +123,7 @@ static struct this_s this = {
   #else
     .pidVZ = {
       .init = {
-        .kp = 25.0f,
+        .kp = 20.0f,
         .ki = 15.0f,
         .kd = 0,
       },
@@ -132,7 +132,7 @@ static struct this_s this = {
   #endif
   .pidX = {
     .init = {
-      .kp = 2.0f,
+      .kp = 1.0f,
       .ki = 0.0f,
       .kd = 0.0f,
     },
@@ -141,7 +141,7 @@ static struct this_s this = {
 
   .pidY = {
     .init = {
-      .kp = 2.0f,
+      .kp = 1.0f,
       .ki = 0.0f,
       .kd = 0.0f,
     },
@@ -150,16 +150,16 @@ static struct this_s this = {
 
   .pidZ = {
     .init = {
-      .kp = 2.0f,
-      .ki = 0.5f,
+      .kp = 0.75f,
+      .ki = 0.65f,
       .kd = 0.0f,
     },
     .pid.dt = DT,
   },
   #ifdef IMPROVED_BARO_Z_HOLD
-    .thrustBase = 38000,
+    .thrustBase = 40000,
   #else
-    .thrustBase = 36000,
+    .thrustBase = 40000,
   #endif
   .thrustMin  = 20000,
 };
